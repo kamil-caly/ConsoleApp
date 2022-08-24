@@ -43,7 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataReader.cs" />
+    <Compile Include="DataOperations.cs" />
+    <Compile Include="Interfaces\IDataOperations.cs" />
+    <Compile Include="Interfaces\IImportData.cs" />
+    <Compile Include="ImportData.cs" />
+    <Compile Include="Entities\ImportedObject.cs" />
+    <Compile Include="Entities\ImportedObjectBaseClass.cs" />
+    <Compile Include="Interfaces\IPrintData.cs" />
+    <Compile Include="PrintData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
