@@ -69,7 +69,22 @@ namespace ConsoleApp
             }
         }
 
-        public List<ImportedObject> GetImportedObject()
+        public List<ImportedObject> GetImportedObjectAfterSplit()
+        {
+            this.SplitDataToImportedObjectsList();
+
+            return this.ImportedObjects;
+        }
+
+        public List<ImportedObject> GetImportedObjectAfterSplitWithClearAndCorrect()
+        {
+            this.SplitDataToImportedObjectsList();
+            this.ClearAndCorrectObjectsList();
+
+            return this.ImportedObjects;
+        }
+
+        public List<ImportedObject> GetImportedObjectAfterOperations()
         {
             this.SplitDataToImportedObjectsList();
             this.ClearAndCorrectObjectsList();

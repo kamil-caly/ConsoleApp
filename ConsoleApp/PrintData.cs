@@ -7,25 +7,31 @@ namespace ConsoleApp
     {
         private readonly IDataOperations _dataOperations;
         private readonly List<ImportedObject> _importedObjects;
+        public List<bool> isDatabase { get; set; }
+        public bool printDatabaseTables { get; set; }
 
         public PrintData(IDataOperations dataOperations)
         {
            
             _dataOperations = dataOperations;
-            _importedObjects = _dataOperations.GetImportedObject();
+            _importedObjects = _dataOperations.GetImportedObjectAfterOperations();
         }
 
         public void PrintDataBaseInformation()
         {
+            isDatabase = new List<bool>();
+
             foreach (var database in _importedObjects)
             {
                 if (database.Type == "DATABASE")
                 {
                     Console.WriteLine($"Database '{database.Name}' ({database.NumberOfChildren} tables)");
+                    isDatabase.Add(true);
 
                     this.PrintAllDatabasesTables(database);
-
                 }
+
+                isDatabase.Add(false);
             }
         }
 

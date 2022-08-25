@@ -7,6 +7,8 @@ namespace ConsoleApp
         void SplitDataToImportedObjectsList();
         void ClearAndCorrectObjectsList();
         void AssignNumberOfChildrenEveryImportedObject();
-        List<ImportedObject> GetImportedObject();
+        List<ImportedObject> GetImportedObjectAfterOperations();
+        List<ImportedObject> GetImportedObjectAfterSplitWithClearAndCorrect();
+        List<ImportedObject> GetImportedObjectAfterSplit();
     }
 }
